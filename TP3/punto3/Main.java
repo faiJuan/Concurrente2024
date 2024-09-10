@@ -8,7 +8,7 @@ public class Main {
         Thread [] hamsters= new Thread[15];
 
         for (int i = 0; i <15; i++) {
-            hamsters[i]= new Thread (new Hamster(plato, rueda, hamaca));
+            hamsters[i]= new Thread (new Hamster(plato, hamaca, rueda));
             hamsters[i].start();
         }
 
