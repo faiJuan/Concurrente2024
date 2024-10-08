@@ -3,8 +3,8 @@ package TP5.punto3;
 public class Main {
     public static void main(String[] args) {
         Comedor comedor=new Comedor(5);
-        Thread[] perros= new Thread [20];
-        Thread[] gatos= new Thread [20];
+        Thread[] perros= new Thread [15];
+        Thread[] gatos= new Thread [3];
         GestorComedor controlador=new GestorComedor(comedor);
         Thread gestor=new Thread(controlador);
 

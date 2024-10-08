@@ -8,7 +8,9 @@ public class Perro implements Runnable{
 
     public void run() {
         try{
-            comedor.comerPerro();
+            comedor.empezarComerPerro();
+            /*Thread.sleep(2000);
+            comedor.terminoPerro();*/
         } catch (Exception e){
 
         }

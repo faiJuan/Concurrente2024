@@ -8,7 +8,9 @@ public class Gato implements Runnable{
 
     public void run() {
         try{
-            comedor.comerGato();
+            comedor.empezarComerGato();
+            /*Thread.sleep(2000);
+            comedor.terminoGato();*/
         } catch (Exception e){
 
         }
