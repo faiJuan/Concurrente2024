@@ -13,7 +13,7 @@ public class Comedor {
         this.cantComiendo = cant;
         this.cantComederos = cant;
         this.turno = '-';
-        this.controlador = new Semaphore(1);
+        this.controlador = new Semaphore(0);
         this.mutex = new Semaphore(1);
         this.mutex2 = new Semaphore(1);
         this.perros = new Semaphore(0);
@@ -25,6 +25,7 @@ public class Comedor {
         gatosQuierenComer++;
         if (turno == '-') {
             turno = 'G';
+            controlador.release();
         }
         mutex.release();
 
@@ -46,10 +47,12 @@ public class Comedor {
 
     public void empezarComerPerro() throws InterruptedException {
         mutex.acquire();
+        perrosQuierenComer++;
         if (turno == '-') {
             turno = 'P';
+            controlador.release();
         }
-        perrosQuierenComer++;
+        
         mutex.release();
         
         perros.acquire();
