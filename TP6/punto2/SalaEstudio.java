@@ -7,7 +7,7 @@ public class SalaEstudio {
         this.mesasUsadas=0;
         this.total=t;
         this.turno=0;
-        this.turnoActual=0;
+        this.turnoActual=1;
     }
 
     public synchronized int obtenerTurno (){
@@ -21,6 +21,7 @@ public class SalaEstudio {
                 wait();
             }
             mesasUsadas++;
+            
             System.out.println(Thread.currentThread().getName()+" esta usando una mesa");
         
         
@@ -29,6 +30,6 @@ public class SalaEstudio {
     public synchronized void dejarMesa (){
         mesasUsadas--;
         System.out.println(Thread.currentThread().getName()+" dejo de usar mesa. Se fue de la biblioteca");
-        notifyAll();
+        notify();
     }
 }

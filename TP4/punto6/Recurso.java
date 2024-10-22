@@ -23,12 +23,12 @@ public class Recurso {
     }
 
     public void taxista () throws InterruptedException{
-        System.out.println("taxista descansando");
         taxista.acquire();
+        System.out.println("taxista descansando");
+        taxista.release();
         System.out.println("iniciando viaje");
         Thread.sleep(3000);
         System.out.println("viaje terminado");
-        taxista.release();
         pasajero.release();
 
 

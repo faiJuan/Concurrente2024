@@ -18,6 +18,7 @@ public class Controlador implements Runnable{
         }
 
         soga.cruzaron();
+        
     }
     
 }
