@@ -10,12 +10,6 @@ public class SalaEstudio {
         this.turnoActual=1;
     }
 
-    public synchronized int obtenerTurno (){
-        turno++;
-
-        return turno;
-    }
-
     public synchronized void usarMesa() throws InterruptedException{
             while(mesasUsadas>=total){
                 wait();
@@ -23,8 +17,7 @@ public class SalaEstudio {
             mesasUsadas++;
             
             System.out.println(Thread.currentThread().getName()+" esta usando una mesa");
-        
-        
+
     }
 
     public synchronized void dejarMesa (){
