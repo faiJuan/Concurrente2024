@@ -44,6 +44,7 @@ public class Coordinador {
                 computadoras.await();
             }
             pcEnUso++;
+            
             System.out.println(Thread.currentThread().getName()+"tiene una pc");
             
         } catch (Exception e) {
