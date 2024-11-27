@@ -3,10 +3,10 @@ package TPO;
 public class Main {
 
   public static void main(String[] args) {
-        TrenTuristico recurso=new TrenTuristico();
-        Thread [] visitantes=new Thread [17];
+        BarcoPirata recurso=new BarcoPirata();
+        Thread [] visitantes=new Thread [23];
         Thread maquinista;
-        Maquinista q1=new Maquinista(recurso);
+        EncargadoBarco q1=new EncargadoBarco(recurso);
         maquinista=new Thread(q1);
         maquinista.start();
 

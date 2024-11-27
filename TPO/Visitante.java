@@ -2,15 +2,15 @@ package TPO;
 
 
 public class Visitante implements Runnable{
-    private TrenTuristico tren;
-    public Visitante(TrenTuristico unTren) {
-        this.tren=unTren;
+    private BarcoPirata montaña;
+    public Visitante(BarcoPirata unam) {
+        this.montaña=unam;
     }
 
     public void run(){
         try {
-            tren.subirTren(Thread.currentThread().getName());
-            tren.bajarTren();
+            montaña.subirBarco();
+            montaña.bajarBarco();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();

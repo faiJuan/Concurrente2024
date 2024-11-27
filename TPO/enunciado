@@ -1,8 +1,0 @@
- Trenes del Parque (Obligatorio) 							Juan
-Para recorrer el parque, los visitantes pueden abordar un tren turístico que recorre las instalaciones. Los visitantes se colocan en una cola 
-para esperar que el tren llegue. El tren tiene capacidad para 10 personas y parte una vez que la fila está llena o después de 5 minutos de espera,
-lo que ocurra primero. 
-Solución: Método BlockingQueue.
-Justificación:  Los visitantes se colocan en una cola para esperar que el tren llegue. 
-Estos pueden ser añadidos a la cola hasta que se alcance la capacidad máxima de 10 personas o hasta que transcurra un tiempo de espera de 5 minutos.
- Una vez que se llena la cola, se puede procesar el grupo para abordar el tren.
