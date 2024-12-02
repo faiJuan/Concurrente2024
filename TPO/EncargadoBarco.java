@@ -1,19 +1,23 @@
 package TPO;
 
-public class EncargadoBarco implements Runnable{
-    private BarcoPirata barco;
 
-    public EncargadoBarco(BarcoPirata unbarco){
-        this.barco=unbarco;
+public class EncargadoBarco implements Runnable{
+    private Parque parque;
+    private ControlParque control;
+    public EncargadoBarco(Parque unP,ControlParque unC){
+        this.parque=unP;
+        this.control=unC;
     }
 
     public void run(){
         try {
-            while(true){
-                barco.empezarJuegoBarco();
+            control.entrarParque();
+            while(control.getPermisoComienzo()){
+                parque.barco.empezarJuegoBarco();
                 Thread.sleep(3000);
-                barco.terminarJuegoBarco();
+                parque.barco.terminarJuegoBarco();
             }
+            parque.barco.cerrarJuego();
         } catch (InterruptedException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
